@@ -6,3 +6,11 @@
     grid-auto-rows: auto;
     border: 5px solid black;
 }
+
+.gridDivs{
+    transition: background-color .09s;
+}
+
+.gridDivs:hover{
+    background-color: black;
+}
