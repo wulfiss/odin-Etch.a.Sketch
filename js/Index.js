@@ -1,5 +1,10 @@
+/*
+
+It create a table 16x16 but the course wanted an grid not a table.
+
 function createGrid(divGrid){
     let table = document.createElement('table');
+    table.classList.add('tableDivs');
     let tableBody = document.createElement('tbody');
     let divs = document.createElement('div');
 
@@ -14,7 +19,7 @@ function createGrid(divGrid){
     divGrid.appendChild(table);
 
 }
-
+*/
 let divGrid = document.querySelector("#divGrid");
 
-createGrid(divGrid);
+
