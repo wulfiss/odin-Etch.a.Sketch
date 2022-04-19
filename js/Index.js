@@ -20,6 +20,15 @@ function createGrid(divGrid){
 
 }
 */
+
+function createGrid(divGrid){
+    for(let i = 0; i < 256; i++){
+        let divs = document.createElement('div');
+        divs.classList.add('gridDivs');
+        divGrid.appendChild(divs);
+    }
+}
+
 let divGrid = document.querySelector("#divGrid");
 
-
+createGrid(divGrid);
