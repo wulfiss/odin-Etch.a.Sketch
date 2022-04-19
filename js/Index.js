@@ -29,6 +29,15 @@ function createGrid(divGrid){
     }
 }
 
+function hoverColorChange(){
+    let $divsGrids = document.querySelector('.gridDivs');
+
+    $divsGrids.addEventListener('mouseover', () =>{
+        $divsGrids.setAttribute('style', 'background: black');
+    });
+}
+
 let divGrid = document.querySelector("#divGrid");
 
 createGrid(divGrid);
+hoverColorChange();
