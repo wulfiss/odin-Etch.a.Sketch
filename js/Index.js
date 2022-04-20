@@ -21,10 +21,10 @@ function createGrid(divGrid){
 }
 */
 
-function createGrid(divGrid, numbDiv = 256){
+function createGrid(divGrid, numbDiv = 256, className = 'sixteenPx'){
     for(let i = 0; i < numbDiv; i++){
         let divs = document.createElement('div');
-        divs.classList.add('gridDivs');
+        divs.classList.add(className);
         divs.setAttribute('id', 'theDiv');
         divGrid.appendChild(divs);
     }
@@ -36,7 +36,7 @@ let divGrid = document.querySelector("#divGrid");
 createGrid(divGrid);
 
 
-let $divsGrids = document.querySelectorAll('.gridDivs');
+let $divsGrids = document.querySelectorAll('.sixteenPx');
 
 $divsGrids.forEach($divsGrids =>
     $divsGrids.addEventListener('mouseover', () =>{
@@ -51,15 +51,15 @@ $hundredButton.addEventListener('click', () =>{
         divGrid.removeChild(divGrid.firstChild);
     }
 
-    createGrid(divGrid, 10000);
-    divGrid.style.gridTemplateColumns ='repeat (100, auto)';
+    createGrid(divGrid, 10000, 'hundredPx');
+    divGrid.classList.add("hundredCavan");
 
-    let $divsGrids = document.querySelectorAll('.gridDivs');
+    let $divsGrids = document.querySelectorAll('.hundredPx');
 
     $divsGrids.forEach($divsGrids =>
     $divsGrids.addEventListener('mouseover', () =>{
         $divsGrids.setAttribute('style', 'background: black');
-    })   
-)
+        })   
+    )
 
 })
