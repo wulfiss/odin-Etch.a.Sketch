@@ -25,19 +25,21 @@ function createGrid(divGrid){
     for(let i = 0; i < 256; i++){
         let divs = document.createElement('div');
         divs.classList.add('gridDivs');
+        divs.setAttribute('id', 'theDiv');
         divGrid.appendChild(divs);
     }
 }
 
-function hoverColorChange(){
-    let $divsGrids = document.querySelector('.gridDivs');
-
-    $divsGrids.addEventListener('mouseover', () =>{
-        $divsGrids.setAttribute('style', 'background: black');
-    });
-}
 
 let divGrid = document.querySelector("#divGrid");
 
 createGrid(divGrid);
-hoverColorChange();
+
+
+let $divsGrids = document.querySelectorAll('.gridDivs');
+
+$divsGrids.forEach($divsGrids =>
+    $divsGrids.addEventListener('mouseover', () =>{
+        $divsGrids.setAttribute('style', 'background: black');
+    })   
+)
