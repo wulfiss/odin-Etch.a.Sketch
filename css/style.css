@@ -10,7 +10,7 @@
 transition: background-color .09s;
 }
 
-.sixteenPx{
+.sixteenCanvas{
     grid-template-columns: repeat(16, auto);
     grid-auto-rows: auto;
 }
@@ -18,7 +18,7 @@ transition: background-color .09s;
     background-color: black;
 }
 
-.hundredCavan{
+.hundredCanva{
     grid-template-columns: repeat(100, auto);
     grid-auto-rows: auto;
 }

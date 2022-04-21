@@ -1,5 +1,4 @@
 /*
-
 It create a table 16x16 but the course wanted an grid not a table.
 
 function createGrid(divGrid){
@@ -30,6 +29,15 @@ function createGrid(divGrid, numbDiv = 256, className = 'sixteenPx'){
     }
 }
 
+function mouseMove(){
+    if(isDrawing == true){
+        $divsGrids.forEach($divsGrids =>{
+            $divsGrids.addEventListener('mousemove', () =>{
+                $divsGrids.setAttribute('style', 'background: black');
+            })
+        })
+    }
+}
 
 let divGrid = document.querySelector("#divGrid");
 
@@ -37,10 +45,39 @@ createGrid(divGrid);
 
 
 let $divsGrids = document.querySelectorAll('.sixteenPx');
+let isDrawing = false;
 
+$divsGrids.forEach($divsGrids =>{
+    $divsGrids.addEventListener('mousedown', e =>{
+        isDrawing = true;
+    })
+})
+
+$divsGrids.forEach($divsGrids =>{
+    $divsGrids.addEventListener('mousemove', e =>{
+        if(isDrawing === true){
+            $divsGrids.setAttribute('style', 'background: black');
+        }
+    })
+})
+
+window.addEventListener('mouseup', e =>{
+    if(isDrawing === true){
+        isDrawing = false;
+    }
+})
+
+
+
+
+/*
 $divsGrids.forEach($divsGrids =>
-    $divsGrids.addEventListener('mouseover', () =>{
-        $divsGrids.setAttribute('style', 'background: black');
+    $divsGrids.addEventListener('mousedown', e =>{
+        
+            $divsGrids.addEventListener('mousemove', () =>{
+                $divsGrids.setAttribute('style', 'background: black');
+            })
+        }
     })   
 )
 
@@ -52,14 +89,15 @@ $hundredButton.addEventListener('click', () =>{
     }
 
     createGrid(divGrid, 10000, 'hundredPx');
-    divGrid.classList.add("hundredCavan");
+    divGrid.classList.add("hundredCanvas");
 
     let $divsGrids = document.querySelectorAll('.hundredPx');
 
     $divsGrids.forEach($divsGrids =>
-    $divsGrids.addEventListener('mouseover', () =>{
+    $divsGrids.addEventListener('onmousedown', () =>{
         $divsGrids.setAttribute('style', 'background: black');
         })   
     )
 
 })
+*/
