@@ -46,10 +46,6 @@ const removeDivs = () =>{
     }
 }
 
-const clearCanvas = () =>{
-    canvas
-    canvas.style.setProperty('background-color', 'red');
-}
 
 let canvas = document.querySelector('#canvas');
 let $hundredPx = document.querySelector('#hundredPx');
@@ -71,17 +67,4 @@ $slider.addEventListener('input', () =>{
     canvas.style.setProperty('grid-template-columns', `repeat(${$slider.value}, 1fr)`);
     drawingCanvas();
 })
-
-
-/*
-$hundredPx.addEventListener('click', () =>{
-    clearCanvas();
-    createGrid(canvas, 4096);
-    canvas.style.setProperty('grid-template-columns', 'repeat(64, 1fr)');
-
-    drawingCanvas();
-
-})
-*/
-
 
