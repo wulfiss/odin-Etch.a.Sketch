@@ -47,14 +47,6 @@ let $slider = document.querySelector('#canvasSize');
 createGrid(canvas);
 drawingCanvas();
 
-$hundredPx.addEventListener('click', () =>{
-    clearCanvas();
-    createGrid(canvas, 4096);
-    canvas.style.setProperty('grid-template-columns', 'repeat(64, 1fr)');
-
-    drawingCanvas();
-
-})
 $slider.addEventListener('input', () =>{
     canvasSizeViewer.textContent = `${$slider.value}X${$slider.value}`;
 
@@ -63,5 +55,17 @@ $slider.addEventListener('input', () =>{
     canvas.style.setProperty('grid-template-columns', `repeat(${$slider.value}, 1fr)`);
     drawingCanvas();
 })
+
+
+/*
+$hundredPx.addEventListener('click', () =>{
+    clearCanvas();
+    createGrid(canvas, 4096);
+    canvas.style.setProperty('grid-template-columns', 'repeat(64, 1fr)');
+
+    drawingCanvas();
+
+})
+*/
 
 
