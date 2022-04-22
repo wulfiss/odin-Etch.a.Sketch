@@ -39,6 +39,9 @@ const clearCanvas = () =>{
 
 let canvas = document.querySelector('#canvas');
 let $hundredPx = document.querySelector('#hundredPx');
+let canvasSize = document.querySelector('#canvasSize');
+let $slider = document.querySelector('#myRange');
+
 
 createGrid(canvas);
 drawingCanvas();
@@ -51,3 +54,8 @@ $hundredPx.addEventListener('click', () =>{
     drawingCanvas();
 
 })
+$slider.addEventListener('input', () =>{
+    canvasSize.textContent = `${$slider.value}X${$slider.value}`;
+})
+
+
