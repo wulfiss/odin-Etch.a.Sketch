@@ -9,7 +9,7 @@
 }
 .canvasDiv{
     transition: background-color .09s;
-    background-color: red;
+    background-color: white;
 }
 .canvasDiv:hover{
     background-color: black;

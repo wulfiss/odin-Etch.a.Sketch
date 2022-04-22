@@ -10,6 +10,8 @@ function createGrid(divGrid, canvasSizeSlider = 16){
 function drawingCanvas(){
     let canvasDivs = document.querySelectorAll('.canvasDiv');
     let $clearCanvas = document.querySelector('#clearCanvas');
+    let $colorPicker = document.querySelector('#colorPicker');
+    let colorUser = $colorPicker.value
     let isDrawing = false;
 
 
@@ -21,7 +23,7 @@ function drawingCanvas(){
     canvasDivs.forEach(canvasDivs =>{
         canvasDivs.addEventListener('mousemove', e =>{
             if(isDrawing === true){
-                canvasDivs.setAttribute('style', 'background: black');
+                canvasDivs.setAttribute('style', `background: ${colorUser}`);
             }
         })
     });
@@ -34,10 +36,16 @@ function drawingCanvas(){
 
     $clearCanvas.addEventListener('click', () =>{
         canvasDivs.forEach(canvasDivs => {
-            canvasDivs.setAttribute('style', 'background: red');
+            canvasDivs.setAttribute('style', 'background: white');
             }
         )
     });
+
+    $colorPicker.addEventListener('input', () =>{
+        colorUser = $colorPicker.value;
+    })
+
+
 }
 
 const removeDivs = () =>{
