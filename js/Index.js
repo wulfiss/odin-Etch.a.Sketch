@@ -1,4 +1,5 @@
-function createGrid(divGrid, numbDiv = 256){
+function createGrid(divGrid, canvasSizeSlider = 16){
+    let numbDiv = canvasSizeSlider * canvasSizeSlider;
     for(let i = 0; i < numbDiv; i++){
         let canvasDiv = document.createElement('div');
         canvasDiv.classList.add('canvasDiv');
@@ -39,8 +40,8 @@ const clearCanvas = () =>{
 
 let canvas = document.querySelector('#canvas');
 let $hundredPx = document.querySelector('#hundredPx');
-let canvasSize = document.querySelector('#canvasSize');
-let $slider = document.querySelector('#myRange');
+let canvasSizeViewer = document.querySelector('#canvasSizeViewer');
+let $slider = document.querySelector('#canvasSize');
 
 
 createGrid(canvas);
@@ -55,7 +56,12 @@ $hundredPx.addEventListener('click', () =>{
 
 })
 $slider.addEventListener('input', () =>{
-    canvasSize.textContent = `${$slider.value}X${$slider.value}`;
+    canvasSizeViewer.textContent = `${$slider.value}X${$slider.value}`;
+
+    clearCanvas();
+    createGrid(canvas,$slider.value);
+    canvas.style.setProperty('grid-template-columns', `repeat(${$slider.value}, 1fr)`);
+    drawingCanvas();
 })
 
 
