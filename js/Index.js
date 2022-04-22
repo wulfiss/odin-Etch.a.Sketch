@@ -40,13 +40,22 @@ function drawingCanvas(){
             }
         )
     });
-
+    
     $colorPicker.addEventListener('input', () =>{
         colorUser = $colorPicker.value;
     })
 
-
+    $eraser.addEventListener('click',() =>{
+        if($eraser.textContent === 'Eraser'){
+            $eraser.textContent = 'Pencil';
+            colorUser = 000000;
+        }else{
+            $eraser.textContent = 'Eraser'
+            colorUser = $colorPicker.value;
+        }
+    })
 }
+
 
 const removeDivs = () =>{
     while(canvas.firstChild){
@@ -56,10 +65,9 @@ const removeDivs = () =>{
 
 
 let canvas = document.querySelector('#canvas');
-let $hundredPx = document.querySelector('#hundredPx');
 let canvasSizeViewer = document.querySelector('#canvasSizeViewer');
 let $slider = document.querySelector('#canvasSize');
-
+let $eraser = document.querySelector('#eraser');
 
 
 createGrid(canvas);
