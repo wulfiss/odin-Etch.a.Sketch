@@ -8,13 +8,14 @@ function createGrid(divGrid, canvasSizeSlider = 16){
 }
 
 function drawingCanvas(){
-    let canvasDivs = document.querySelectorAll('.canvasDiv')
+    let canvasDivs = document.querySelectorAll('.canvasDiv');
+    let $clearCanvas = document.querySelector('#clearCanvas');
     let isDrawing = false;
 
 
     canvas.addEventListener('mousedown', e =>{
         isDrawing = true;
-    })
+    });
 
 
     canvasDivs.forEach(canvasDivs =>{
@@ -23,19 +24,31 @@ function drawingCanvas(){
                 canvasDivs.setAttribute('style', 'background: black');
             }
         })
-    })
+    });
 
     window.addEventListener('mouseup', e =>{
         if(isDrawing === true){
             isDrawing = false;
         }
-    })
+    });
+
+    $clearCanvas.addEventListener('click', () =>{
+        canvasDivs.forEach(canvasDivs => {
+            canvasDivs.setAttribute('style', 'background: red');
+            }
+        )
+    });
 }
 
-const clearCanvas = () =>{
+const removeDivs = () =>{
     while(canvas.firstChild){
         canvas.removeChild(canvas.firstChild);
     }
+}
+
+const clearCanvas = () =>{
+    canvas
+    canvas.style.setProperty('background-color', 'red');
 }
 
 let canvas = document.querySelector('#canvas');
@@ -44,14 +57,17 @@ let canvasSizeViewer = document.querySelector('#canvasSizeViewer');
 let $slider = document.querySelector('#canvasSize');
 
 
+
 createGrid(canvas);
 drawingCanvas();
+
+
 
 $slider.addEventListener('input', () =>{
     canvasSizeViewer.textContent = `${$slider.value}X${$slider.value}`;
 
-    clearCanvas();
-    createGrid(canvas,$slider.value);
+    removeDivs();
+    createGrid(canvas, $slider.value);
     canvas.style.setProperty('grid-template-columns', `repeat(${$slider.value}, 1fr)`);
     drawingCanvas();
 })
