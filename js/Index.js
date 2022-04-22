@@ -7,6 +7,7 @@ function createGrid(divGrid, numbDiv = 256){
 }
 
 let canvas = document.querySelector('#canvas');
+let $hundredPx = document.querySelector('#hundredPx');
 
 createGrid(canvas);
 
@@ -33,37 +34,12 @@ window.addEventListener('mouseup', e =>{
     }
 })
 
-
-
-
-/*
-$divsGrids.forEach($divsGrids =>
-    $divsGrids.addEventListener('mousedown', e =>{
-        
-            $divsGrids.addEventListener('mousemove', () =>{
-                $divsGrids.setAttribute('style', 'background: black');
-            })
-        }
-    })   
-)
-
-let $hundredButton = document.getElementById('hundredPx');
-
-$hundredButton.addEventListener('click', () =>{
-    while(divGrid.firstChild){
-        divGrid.removeChild(divGrid.firstChild);
+$hundredPx.addEventListener('click', () =>{
+    while(canvas.firstChild){
+        canvas.removeChild(canvas.firstChild);
     }
 
-    createGrid(divGrid, 10000, 'hundredPx');
-    divGrid.classList.add("hundredCanvas");
-
-    let $divsGrids = document.querySelectorAll('.hundredPx');
-
-    $divsGrids.forEach($divsGrids =>
-    $divsGrids.addEventListener('onmousedown', () =>{
-        $divsGrids.setAttribute('style', 'background: black');
-        })   
-    )
+    createGrid(canvas, 10000);
+    canvas.style.setProperty('grid-template-columns', 'repeat(100, 1fr)');
 
 })
-*/
