@@ -1,62 +1,28 @@
-/*
-It create a table 16x16 but the course wanted an grid not a table.
-
-function createGrid(divGrid){
-    let table = document.createElement('table');
-    table.classList.add('tableDivs');
-    let tableBody = document.createElement('tbody');
-    let divs = document.createElement('div');
-
-    for (let i = 0; i < 16; i++){
-        let tr = tableBody.insertRow();
-        for (let j = 0; j < 16; j++){
-            let td = tr.insertCell();
-            td.appendChild(divs);
-        }
-    }
-    table.appendChild(tableBody);
-    divGrid.appendChild(table);
-
-}
-*/
-
-function createGrid(divGrid, numbDiv = 256, className = 'sixteenPx'){
+function createGrid(divGrid, numbDiv = 256){
     for(let i = 0; i < numbDiv; i++){
-        let divs = document.createElement('div');
-        divs.classList.add(className);
-        divs.setAttribute('id', 'theDiv');
-        divGrid.appendChild(divs);
+        let canvasDiv = document.createElement('div');
+        canvasDiv.classList.add('canvasDiv');
+        canvas.appendChild(canvasDiv);
     }
 }
 
-function mouseMove(){
-    if(isDrawing == true){
-        $divsGrids.forEach($divsGrids =>{
-            $divsGrids.addEventListener('mousemove', () =>{
-                $divsGrids.setAttribute('style', 'background: black');
-            })
-        })
-    }
-}
+let canvas = document.querySelector('#canvas');
 
-let divGrid = document.querySelector("#divGrid");
+createGrid(canvas);
 
-createGrid(divGrid);
-
-
-let $divsGrids = document.querySelectorAll('.sixteenPx');
+let canvasDivs = document.querySelectorAll('.canvasDiv')
 let isDrawing = false;
 
-$divsGrids.forEach($divsGrids =>{
-    $divsGrids.addEventListener('mousedown', e =>{
-        isDrawing = true;
-    })
+
+canvas.addEventListener('mousedown', e =>{
+    isDrawing = true;
 })
 
-$divsGrids.forEach($divsGrids =>{
-    $divsGrids.addEventListener('mousemove', e =>{
+
+canvasDivs.forEach(canvasDivs =>{
+    canvasDivs.addEventListener('mousemove', e =>{
         if(isDrawing === true){
-            $divsGrids.setAttribute('style', 'background: black');
+            canvasDivs.setAttribute('style', 'background: black');
         }
     })
 })

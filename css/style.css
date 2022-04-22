@@ -1,28 +1,16 @@
-#divGrid{
+#canvas{
     display: grid;
     width: 300px;
     height: 450px;
     gap: 0;
     border: 5px solid black;
-
-}
-.sixteenPx, .hundredPx{
-transition: background-color .09s;
-}
-
-.sixteenCanvas{
     grid-template-columns: repeat(16, auto);
     grid-auto-rows: auto;
 }
-.sixteenPx:hover{
-    background-color: black;
+.canvasDiv{
+    transition: background-color .09s;
+    background-color: red;
 }
-
-.hundredCanva{
-    grid-template-columns: repeat(100, auto);
-    grid-auto-rows: auto;
-}
-
-.hundredPx:hover{
+.canvasDiv:hover{
     background-color: black;
 }
