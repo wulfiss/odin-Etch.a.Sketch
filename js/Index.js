@@ -40,9 +40,10 @@ function drawingCanvas(){
             }
         )
     });
-    
+
     $colorPicker.addEventListener('input', () =>{
         colorUser = $colorPicker.value;
+        $eraser.textContent = 'Eraser';
     })
 
     $eraser.addEventListener('click',() =>{
@@ -50,7 +51,7 @@ function drawingCanvas(){
             $eraser.textContent = 'Pencil';
             colorUser = 000000;
         }else{
-            $eraser.textContent = 'Eraser'
+            $eraser.textContent = 'Eraser';
             colorUser = $colorPicker.value;
         }
     })
