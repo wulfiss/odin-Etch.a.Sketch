@@ -3,6 +3,7 @@ function createGrid(divGrid, canvasSizeSlider = 16){
     for(let i = 0; i < numbDiv; i++){
         let canvasDiv = document.createElement('div');
         canvasDiv.classList.add('canvasDiv');
+        canvasDiv.setAttribute('draggable', 'false');
         canvas.appendChild(canvasDiv);
     }
 }
