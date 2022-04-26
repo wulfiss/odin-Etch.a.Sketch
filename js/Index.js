@@ -36,7 +36,7 @@ function drawingCanvas(){
     canvasDivs.forEach(canvasDivs =>{
         canvasDivs.addEventListener('mousemove', e =>{
             if(isDrawing === true && isRainBow === true){
-                canvas.setAttribute ('style', `background: ${rainBowEffect()}`);
+                canvasDivs.setAttribute ('style', `background: ${rainBowEffect()}`);
             }else if(isDrawing === true){
                 canvasDivs.setAttribute('style', `background: ${colorUser}`);
             }
