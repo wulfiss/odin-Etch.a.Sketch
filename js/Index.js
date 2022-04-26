@@ -62,24 +62,29 @@ function drawingCanvas(){
 
     //TouchEvents
 
-    canvas.addEventListener('touchstart', e =>{
-        isDrawing = true;
-    });
+    const canvasDivArray = [].slice.call(canvasDivs);
+    canvasDivArray.forEach((canvasSlice) =>{
+        canvasSlice.addEventListener('touchstart', e =>{
+            e.preventDefault();
+            isDrawing = true;
+        });
 
-    canvasDivs.forEach(canvasDivs =>{
-        canvasDivs.addEventListener('touchmove', e =>{
+        //canvasDivs.forEach(canvasDivs =>{
+            canvasSlice.addEventListener('touchmove', e =>{
+                e.preventDefault();
+                if(isDrawing === true){
+                    canvasSlice.setAttribute('style', `background: ${colorUser}`);
+                }
+            })
+        //});
+
+        window.addEventListener('touchend', e =>{
+            e.preventDefault();
             if(isDrawing === true){
-                canvasDivs.setAttribute('style', `background: ${colorUser}`);
+                isDrawing = false;
             }
-        })
-    });
-
-    window.addEventListener('touchend', e =>{
-        if(isDrawing === true){
-            isDrawing = false;
-        }
-    });
-
+        });
+    })
     //TouchEvents
 
     $clearCanvas.addEventListener('click', () =>{
