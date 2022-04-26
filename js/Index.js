@@ -15,6 +15,12 @@ function rainBowEffect(){
     return `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
 }
 
+function isRainBowTrue(){
+    if(isRainBow == true){
+        isRainBow = false;
+    }
+}
+
 function drawingCanvas(){
     let canvasDivs = document.querySelectorAll('.canvasDiv');
     let $clearCanvas = document.querySelector('#clearCanvas');
@@ -26,7 +32,11 @@ function drawingCanvas(){
 
 
     $rainBow.addEventListener('click', e=> {
-        isRainBow = true;
+        if(isRainBow == false){
+            isRainBow = true;
+        }else{
+            isRainBow = false;
+        }
     });
 
     canvas.addEventListener('mousedown', e =>{
@@ -79,15 +89,18 @@ function drawingCanvas(){
     });
 
     $colorPicker.addEventListener('input', () =>{
+        isRainBow = false;
         colorUser = $colorPicker.value;
         $eraser.textContent = 'Eraser';
     })
 
     $eraser.addEventListener('click',() =>{
         if($eraser.textContent === 'Eraser'){
+            isRainBow = false;
             $eraser.textContent = 'Pencil';
             colorUser = 000000;
         }else{
+            isRainBow = false;
             $eraser.textContent = 'Eraser';
             colorUser = $colorPicker.value;
         }
