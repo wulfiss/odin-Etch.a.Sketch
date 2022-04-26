@@ -11,3 +11,14 @@
     transition: background-color .09s;
     background-color: white;
 }
+
+div{
+    border: 1px solid red;
+}
+
+body{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
