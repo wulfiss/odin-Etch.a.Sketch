@@ -7,13 +7,27 @@ function createGrid(divGrid, canvasSizeSlider = 16){
     }
 }
 
+function rainBowEffect(){
+    let colorRed = Math.floor(Math.random() * 255);
+    let colorGreen = Math.floor(Math.random() * 255);
+    let colorBlue =  Math.floor(Math.random() * 255);
+
+    return `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+}
+
 function drawingCanvas(){
     let canvasDivs = document.querySelectorAll('.canvasDiv');
     let $clearCanvas = document.querySelector('#clearCanvas');
     let $colorPicker = document.querySelector('#colorPicker');
     let colorUser = $colorPicker.value
+    let $rainBow = document.querySelector('#rainBow');
     let isDrawing = false;
+    let isRainBow = false;
 
+
+    $rainBow.addEventListener('click', e=> {
+        isRainBow = true;
+    });
 
     canvas.addEventListener('mousedown', e =>{
         isDrawing = true;
@@ -21,7 +35,9 @@ function drawingCanvas(){
 
     canvasDivs.forEach(canvasDivs =>{
         canvasDivs.addEventListener('mousemove', e =>{
-            if(isDrawing === true){
+            if(isDrawing === true && isRainBow === true){
+                canvas.setAttribute ('style', `background: ${rainBowEffect()}`);
+            }else if(isDrawing === true){
                 canvasDivs.setAttribute('style', `background: ${colorUser}`);
             }
         })
@@ -54,6 +70,7 @@ function drawingCanvas(){
     });
 
     //TouchEvents
+
     $clearCanvas.addEventListener('click', () =>{
         canvasDivs.forEach(canvasDivs => {
             canvasDivs.setAttribute('style', 'background: white');
