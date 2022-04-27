@@ -20,6 +20,7 @@ div{
 
 body{
     display: flex;
+    flex-basis: auto;
     flex-direction: column;
     width: auto;
     justify-content: center;
@@ -28,9 +29,10 @@ body{
 }
 
 .middle{
-    width: auto;
+    width: 720px;
     display: flex;
     flex-direction: row;
+    flex-basis: auto;
     justify-content: space-around;
     align-items: center;
 }
@@ -41,6 +43,15 @@ form{
 }
 
 .userInput{
-    border-radius: 50%;
-    border: 4px 
+    border-radius: 100%;
+    border: 4px;
+    padding: 4px;
+    width: 80px;
+    height: 80px
+
+}
+
+.footer{
+    width: auto;
+    height: 50px;
 }
