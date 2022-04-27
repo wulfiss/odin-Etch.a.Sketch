@@ -60,7 +60,7 @@ function drawingCanvas(){
         }
     });
 
-    //TouchEvents
+    /*TouchEvents
 
     const canvasDivArray = [].slice.call(canvasDivs);
     canvasDivArray.forEach((canvasSlice) =>{
@@ -85,7 +85,7 @@ function drawingCanvas(){
             }
         });
     })
-    //TouchEvents
+    TouchEvents*/
 
     $clearCanvas.addEventListener('click', () =>{
         canvasDivs.forEach(canvasDivs => {
