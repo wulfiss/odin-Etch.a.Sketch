@@ -125,7 +125,7 @@ let canvas = document.querySelector('#canvas');
 let canvasSizeViewer = document.querySelector('#canvasSizeViewer');
 let $slider = document.querySelector('#canvasSize');
 let $eraser = document.querySelector('#eraser');
-
+let $rainBowEffect = document.querySelector('#rainBow');
 
 createGrid(canvas);
 drawingCanvas();
@@ -140,4 +140,6 @@ $slider.addEventListener('input', () =>{
     canvas.style.setProperty('grid-template-columns', `repeat(${$slider.value}, 1fr)`);
     drawingCanvas();
 })
+
+setInterval(()=>{$rainBowEffect.setAttribute ('style', `background: ${rainBowEffect()}`);}, 1000);
 
