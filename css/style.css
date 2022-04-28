@@ -58,8 +58,8 @@ form{
 
 #colorPicker{
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
+    height: 83px;
+    width: 83px;
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -72,4 +72,9 @@ form{
 #colorPicker::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
+}
+
+#rainBowText{
+    mix-blend-mode: difference;
+    color: white;
 }
