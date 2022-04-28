@@ -55,3 +55,21 @@ form{
     width: auto;
     height: 50px;
 }
+
+#colorPicker{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+
+#colorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
