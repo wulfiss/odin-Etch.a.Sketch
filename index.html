@@ -13,16 +13,16 @@
             <h1>Etch a sketch</h1>
         </div>
         <div class="middle">
-            <div>
-            <form>
-                <button type="button" class="userInput" id="clearCanvas">Clear</button>
-                <label for="colorPicker" id="colorPickerText">Select color:</label>
-                <input type="color" class="userInput" id="colorPicker">
-                <button type="button" class="userInput" id="rainBow"><h4 id="rainBowText">Rainbow<p>off</p></h4></button>
-                <button type="button" class="userInput" id="eraser" value="Eraser">Eraser</button>
-                <label for="canvasSize" id="canvasSizeViewer">16X16</label>
-                <input type="range" min="1" max="64" value="16" class="slider" id="canvasSize">
-            </form>
+            <div id="formDiv">
+                <form>
+                    <button type="button" class="userInput" id="clearCanvas">Clear</button>
+                    <label for="colorPicker" id="colorPickerText">Select color:</label>
+                    <input type="color" class="userInput" id="colorPicker">
+                    <button type="button" class="userInput" id="rainBow"><h4 id="rainBowText">Rainbow<p>off</p></h4></button>
+                    <button type="button" class="userInput" id="eraser" value="Eraser">Eraser</button>
+                    <input type="range" min="1" max="64" value="16" class="slider" id="canvasSize">
+                    <h5>Canvas pixel size: </h5><label for="canvasSize" id="canvasSizeViewer">16X16</label>
+                </form>
             </div>
             <div id="canvas" class="canvasGrid" draggable="false"></div>
         </div>
