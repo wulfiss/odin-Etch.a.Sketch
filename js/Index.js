@@ -35,8 +35,12 @@ function drawingCanvas(){
     $rainBow.addEventListener('click', e=> {
         if(isRainBow == false){
             isRainBow = true;
+            $rainBow.textContent = 'Rainbow Effect OFF'
+            $eraser.textContent = 'Eraser';
         }else{
             isRainBow = false;
+            $rainBow.textContent = 'Rainbow Effect ON'
+            $eraser.textContent = 'Eraser';
         }
     });
 
@@ -50,6 +54,8 @@ function drawingCanvas(){
                 canvasDivs.setAttribute ('style', `background: ${rainBowEffect()}`);
             }else if(isDrawing === true){
                 canvasDivs.setAttribute('style', `background: ${colorUser}`);
+                isRainBow = false;
+                $rainBow.textContent = 'Rainbow Effect ON'
             }
         })
     });
@@ -98,11 +104,13 @@ function drawingCanvas(){
         isRainBow = false;
         colorUser = $colorPicker.value;
         $eraser.textContent = 'Eraser';
+        $rainBow.textContent = 'Rainbow Effect ON'
     })
 
     $eraser.addEventListener('click',() =>{
         if($eraser.textContent === 'Eraser'){
             isRainBow = false;
+            $rainBow.textContent = 'Rainbow Effect ON'
             $eraser.textContent = 'Pencil';
             colorUser = "rgb(255,255,255";
         }else{

@@ -66,10 +66,6 @@ form{
     transition: 0.3s;
 }
 
-.userInput:active{
-    background-color: #ffbf00;
-}
-
 .footer{
     width: auto;
     height: 50px;
@@ -77,10 +73,12 @@ form{
 
 #colorPicker{
     -webkit-appearance: none;
+    border: none;
 }
 
 #colorPicker::-webkit-color-swatch-wrapper {
-    padding: 10px; 
+    padding: 7px;
+    border: none;
 }
 
 #colorPicker::-webkit-color-swatch {
