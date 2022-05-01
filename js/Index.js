@@ -85,7 +85,7 @@ function drawingCanvas(){
             isRainBow = false;
             $rainBow.textContent = 'Rainbow Effect ON'
             $eraser.textContent = 'Pencil';
-            colorUser = "rgb(255,255,255";
+            colorUser = "rgb(255,255,255)";
         }else{
             isRainBow = false;
             $eraser.textContent = 'Eraser';
