@@ -3,12 +3,12 @@
     width: 400px;
     height: 550px;
     gap: 0;
-    
     box-shadow: 4px 4px 6px #000000;
-    border-radius: 10px;
+    border-radius: 0px;
     grid-template-columns: repeat(16, 1fr);
     grid-auto-rows: auto;
 }
+
 .canvasDiv{
     transition: background-color .09s;
     background-color: white;
@@ -47,11 +47,15 @@ form{
 }
 
 .userInput{
-    border-radius: 100%;
-    border: 4px;
-    padding: 4px;
-    width: 80px;
-    height: 80px;
+    position:inherit;
+    top: 50%;
+    background-color: #0a0a23;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0px;
+    height: 50px;
+    width: 140px;
 }
 
 .userInput:hover{
@@ -64,11 +68,6 @@ form{
 }
 
 #colorPicker{
-    border-radius: 50%;
-    height: 83px;
-    width: 83px;
-    border: none;
-    outline: none;
     -webkit-appearance: none;
 }
 
@@ -78,7 +77,6 @@ form{
 
 #colorPicker::-webkit-color-swatch {
     border: none;
-    border-radius: 50%;
 }
 
 #rainBowText{
