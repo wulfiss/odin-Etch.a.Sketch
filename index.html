@@ -5,6 +5,7 @@
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./js/Index.js" defer></script>
         <link rel="stylesheet" href="./css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
         <title>Etch a sketch</title>
     </head>
 
@@ -15,12 +16,12 @@
         <div class="middle">
             <div id="formDiv">
                 <form>
-                    <label for="colorPicker" id="colorPickerText">Select color:</label>
+                    <label for="colorPicker" id="colorPickerText" class="outSide">Select color:</label>
                     <input type="color" class="userInput" id="colorPicker">
                     <button type="button" class="userInput" id="rainBow">Rainbow Effect ON</button>
                     <button type="button" class="userInput" id="eraser" value="Eraser">Eraser</button>
-                    <button type="button" class="userInput" id="clearCanvas">Clear</button>
-                    <label for="canvasSize" id="canvasSizeViewer">16X16</label>
+                    <button type="button" class="userInput" id="clearCanvas" >Clear</button>
+                    <label for="canvasSize" id="canvasSizeViewer" class="outSide">16X16</label>
                     <input type="range" min="1" max="64" value="16" class="slider" id="canvasSize">
                 </form>
             </div>

@@ -66,33 +66,6 @@ function drawingCanvas(){
         }
     });
 
-    /*TouchEvents
-
-    const canvasDivArray = [].slice.call(canvasDivs);
-    canvasDivArray.forEach((canvasSlice) =>{
-        canvasSlice.addEventListener('touchstart', e =>{
-            e.preventDefault();
-            isDrawing = true;
-        });
-
-        //canvasDivs.forEach(canvasDivs =>{
-            canvasSlice.addEventListener('touchmove', e =>{
-                e.preventDefault();
-                if(isDrawing === true){
-                    canvasSlice.setAttribute('style', `background: ${colorUser}`);
-                }
-            })
-        //});
-
-        window.addEventListener('touchend', e =>{
-            e.preventDefault();
-            if(isDrawing === true){
-                isDrawing = false;
-            }
-        });
-    })
-    TouchEvents*/
-
     $clearCanvas.addEventListener('click', () =>{
         canvasDivs.forEach(canvasDivs => {
             canvasDivs.setAttribute('style', 'background: white');
@@ -149,5 +122,5 @@ $slider.addEventListener('input', () =>{
     drawingCanvas();
 })
 
-setInterval(()=>{$rainBowEffect.setAttribute ('style', `background: ${rainBowEffect()}`);}, 1000);
+setInterval(()=>{$rainBowEffect.setAttribute ('style', `background: ${rainBowEffect()}`);}, 500);
 

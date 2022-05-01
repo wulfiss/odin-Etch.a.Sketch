@@ -1,3 +1,7 @@
+.header, .outSide, .footer, #formDiv {
+    font-family: 'Patrick Hand', cursive;
+}
+
 #canvas{
     display: grid;
     width: 400px;
@@ -19,13 +23,9 @@ div{
 }
 
 body{
-    display: flex;
-    flex-basis: auto;
-    flex-direction: column;
-    width: auto;
-    justify-content: center;
-    align-items: center;
+    display: block;
     background-color: aliceblue;
+    text-align: center;
 }
 
 .middle{
@@ -59,6 +59,8 @@ form{
     height: 50px;
     width: 140px;
     border-collapse: collapse;
+    font-size: 15px;
+    font-family: 'Patrick Hand', cursive;
 }
 
 .userInput:hover{
@@ -69,6 +71,7 @@ form{
 .footer{
     width: auto;
     height: 50px;
+    font-size: 30px;
 }
 
 #colorPicker{
@@ -96,4 +99,14 @@ form{
     justify-content: space-around;
     align-content: space-around;
     height: 550px;
+}
+
+.outSide {
+    font-size: 28px;
+}
+
+.header{
+    font-size: 30px;
+    height: 80px;
+    text-align: center;
 }
