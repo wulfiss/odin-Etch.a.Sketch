@@ -104,7 +104,7 @@ function drawingCanvas(){
         if($eraser.textContent === 'Eraser'){
             isRainBow = false;
             $eraser.textContent = 'Pencil';
-            colorUser = 000000;
+            colorUser = "rgb(255,255,255";
         }else{
             isRainBow = false;
             $eraser.textContent = 'Eraser';
